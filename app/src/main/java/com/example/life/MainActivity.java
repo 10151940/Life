@@ -1,13 +1,21 @@
 package com.example.life;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.app.Application;
+import android.util.Log;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Application {
+    //单例模式
+    private static MainActivity mainActivity = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onCreate() {
+        super.onCreate();
+        mainActivity = this;
+        String showText = "代码启动了";
+        Log.e(showText, showText);
+    }
+
+    public static MainActivity getInstance() {
+        return mainActivity;
     }
 }
