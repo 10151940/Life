@@ -13,14 +13,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"></LinearLayout>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight="5"
+        android:layout_weight="9"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/menu"
         app:itemIconTint="@drawable/color_item_state"
-        app:itemTextColor="@drawable/color_item_state"></android.support.design.widget.BottomNavigationView>
+        app:itemTextColor="@drawable/color_item_state"
+        app:menu="@menu/menu"></android.support.design.widget.BottomNavigationView>
 </LinearLayout>

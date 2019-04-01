@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.life.R;
 
@@ -20,14 +19,14 @@ public class WeatherFrament extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        textView = getActivity().findViewById(R.id.item_weather_textView);
-        button = getActivity().findViewById(R.id.item_weather_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "weather", Toast.LENGTH_SHORT).show();
-            }
-        });
+        //隐藏状态栏
+//        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getActivity(), "weather", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
