@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.nice.Life.UI.weather.WeatherFrament"
     android:orientation="vertical">
 
@@ -12,13 +13,39 @@
         android:layout_weight="1">
     </RelativeLayout>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/weather_bottoms"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:orientation="horizontal"
         android:background="@drawable/leidian_bg">
-
-    </LinearLayout>
-
+        <include
+            android:id="@+id/wf_mybutton_one"
+            layout="@layout/weather_mybutton_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_two"
+            />
+        <include
+            android:id="@+id/wf_mybutton_two"
+            layout="@layout/weather_mybutton_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@+id/wf_mybutton_one"
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_three"/>
+        <include
+            android:id="@+id/wf_mybutton_three"
+            layout="@layout/weather_mybutton_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@+id/wf_mybutton_two"
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_four"/>
+        <include
+            android:id="@+id/wf_mybutton_four"
+            layout="@layout/weather_mybutton_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@+id/wf_mybutton_three"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>

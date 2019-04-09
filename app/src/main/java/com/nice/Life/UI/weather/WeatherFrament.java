@@ -3,18 +3,15 @@ package com.nice.Life.UI.weather;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.life.R;
 
 
 public class WeatherFrament extends Fragment {
-    private TextView textView;
-    private Button button;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -27,6 +24,19 @@ public class WeatherFrament extends Fragment {
 //                Toast.makeText(getActivity(), "weather", Toast.LENGTH_SHORT).show();
 //            }
 //        });
+        //初始化页面
+        initView();
+    }
+    //初始化UI
+    public void initView() {
+
+    }
+    //获取屏幕的宽度
+    private int getWindowWidth() {
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
+        int widthPixels = outMetrics.widthPixels;
+        return widthPixels;
     }
 
     @Override
