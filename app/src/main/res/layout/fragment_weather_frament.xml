@@ -18,6 +18,7 @@
         android:layout_height="120dp"
         android:orientation="horizontal"
         android:background="@drawable/leidian_bg">
+
     </LinearLayout>
 
 </LinearLayout>
