@@ -6,4 +6,7 @@
     <color name="mainColor">#57C1F3</color>
     <color name="mainBgColor">#80BDBDBD</color>
     <color name="tabUnselected">#888888</color>
+    <!--首页下面4个按钮文字的选中颜色-->
+    <color name="weather_btn_selected">#6EC2F1</color>
+    <color name="weather_btn_unselected">#BDBDBD</color>
 </resources>

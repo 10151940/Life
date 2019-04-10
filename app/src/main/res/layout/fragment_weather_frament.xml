@@ -16,8 +16,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/weather_bottoms"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/leidian_bg">
+        android:layout_height="120dp">
         <include
             android:id="@+id/wf_mybutton_one"
             layout="@layout/weather_mybutton_view"
@@ -25,14 +24,15 @@
             android:layout_height="match_parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_two"
-            />
+            android:onClick="onWeatherButtonClick"/>
         <include
             android:id="@+id/wf_mybutton_two"
             layout="@layout/weather_mybutton_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toRightOf="@+id/wf_mybutton_one"
-            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_three"/>
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_three"
+            android:onClick="onWeatherButtonClick"/>
         <include
             android:id="@+id/wf_mybutton_three"
             layout="@layout/weather_mybutton_view"

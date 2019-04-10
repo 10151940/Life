@@ -8,15 +8,17 @@
         android:id="@+id/wmv_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="我是标题"/>
+        android:text="我是标题"
+        android:textColor="@drawable/color_weatherbtn_selector"/>
     <ImageView
         android:id="@+id/wmv_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/blue_dot"/>
+        android:src="@drawable/baitian_qingtian"/>
     <TextView
         android:id="@+id/wmv_temperature_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="16/28"/>
+        android:text="16/28"
+        android:textColor="@drawable/color_weatherbtn_selector"/>
 </LinearLayout>
