@@ -13,11 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.life.R;
+import com.google.gson.Gson;
+import com.nice.Life.Common.API.WFCResponse;
 import com.nice.Life.Common.Constant;
 import com.nice.Life.Utils.OkHTTP.MyDataCallBack;
 import com.nice.Life.Utils.OkHTTP.OkHttpManager;
 import com.nice.Life.Utils.ToastUtil;
-import com.orhanobut.logger.Logger;
 import com.roger.gifloadinglibrary.GifLoadingView;
 
 import java.io.IOException;
@@ -34,6 +35,8 @@ public class WeatherFrament extends Fragment {
     private Toast toast;
     //加载的gitloadingview
     private GifLoadingView gifLoadingView;
+    //网络请求获取到的数据
+    private WFCResponse wfcResponse;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -85,24 +88,25 @@ public class WeatherFrament extends Fragment {
         OkHttpManager.getInstance().postAsynRequireJson(Constant.WeatherOfCity, null, new MyDataCallBack() {
             @Override
             public void onBefore(Request request) {
-                gifLoadingView.setImageResource(R.drawable.baitian_duoyun);
-//                gifLoadingView.show(getFragmentManager(), "");
+                gifLoadingView.setImageResource(R.drawable.cat_load_anim);
+                gifLoadingView.show(getActivity().getFragmentManager(), "");
             }
 
             @Override
             public void requestSuccess(Object result) {
                 Log.e("1", result.toString());
-                ToastUtil.cancel();
+                Gson gson = new Gson();
+                wfcResponse = gson.fromJson(result.toString(), WFCResponse.class);
             }
 
             @Override
             public void requestFailure(Request request, IOException e) {
-                Logger.e(e.getMessage());
+                ToastUtil.showLong(getActivity(),e.getMessage());
             }
 
             @Override
             public void onAfter() {
-                ToastUtil.cancel();
+                gifLoadingView.dismiss();
             }
         });
     }
