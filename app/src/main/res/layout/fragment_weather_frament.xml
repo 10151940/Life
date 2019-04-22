@@ -7,10 +7,160 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/city_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/duoyun_bg"
         android:layout_weight="1">
+        <ImageButton
+            android:id="@+id/weather_position_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/position_icon"
+            android:background="@android:color/transparent"
+            android:paddingTop="30dp"
+            android:paddingLeft="20dp"/>
+        <ImageButton
+            android:id="@+id/weather_share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_button"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"
+            android:layout_marginTop="30dp"/>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/city_info_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="100dp">
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/textWhiteColor"
+                android:textSize="30sp"
+                android:text="" />
+            <TextView
+                android:id="@+id/city_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city_name"
+                android:textColor="@color/textWhiteColor"
+                android:textSize="20sp"
+                android:text="微风" />
+            <TextView
+                android:id="@+id/city_temper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city_wind"
+                android:textColor="@color/textWhiteColor"
+                android:textSize="100sp"
+                android:text="18º" />
+            <LinearLayout
+                android:id="@+id/city_layout_humidity"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/city_temper"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/city_layout_temperature"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/city_img_humidity"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/weather_humidity_icon"
+                    android:layout_marginLeft="5dp"/>
+                <TextView
+                    android:id="@+id/city_text_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/city_img_leaf"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/city_text_temperature"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/textWhiteColor"
+                    android:textSize="17sp"
+                    android:text="12%"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/city_layout_temperature"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/city_temper"
+                app:layout_constraintLeft_toRightOf="@+id/city_layout_humidity"
+                app:layout_constraintRight_toLeftOf="@+id/city_layout_leaf"
+                app:layout_constraintRight_toRightOf="parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:id="@+id/city_img_temperature"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/weather_temperature_icon"
+                    />
+                <TextView
+                    android:id="@+id/city_text_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/city_img_leaf"
+                    app:layout_constraintLeft_toRightOf="@+id/city_text_humidity"
+                    app:layout_constraintRight_toLeftOf="@+id/city_text_leaf"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/textWhiteColor"
+                    android:textSize="17sp"
+                    android:text="12º/20º"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/city_layout_leaf"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/city_temper"
+                app:layout_constraintLeft_toRightOf="@+id/city_layout_temperature"
+                app:layout_constraintRight_toRightOf="parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/city_img_leaf"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/weather_leaf_icon"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/city_text_leaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/city_img_leaf"
+                    app:layout_constraintLeft_toRightOf="@+id/city_text_temperature"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/textWhiteColor"
+                    android:textSize="17sp"
+                    android:text="中度轻度污染"/>
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/weather_coat_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/weather_coat_icon"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"/>
     </RelativeLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -23,16 +173,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_two"
-            android:onClick="onWeatherButtonClick"/>
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_two" />
         <include
             android:id="@+id/wf_mybutton_two"
             layout="@layout/weather_mybutton_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toRightOf="@+id/wf_mybutton_one"
-            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_three"
-            android:onClick="onWeatherButtonClick"/>
+            app:layout_constraintRight_toLeftOf="@+id/wf_mybutton_three" />
         <include
             android:id="@+id/wf_mybutton_three"
             layout="@layout/weather_mybutton_view"

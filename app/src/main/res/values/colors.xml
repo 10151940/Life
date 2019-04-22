@@ -9,4 +9,6 @@
     <!--首页下面4个按钮文字的选中颜色-->
     <color name="weather_btn_selected">#6EC2F1</color>
     <color name="weather_btn_unselected">#BDBDBD</color>
+    <!--白色文字颜色-->
+    <color name="textWhiteColor">#ffff</color>
 </resources>

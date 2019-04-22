@@ -358,10 +358,11 @@ public class OkHttpManager {
                     } catch (Exception e) {
                         e.printStackTrace();
                         Logger.e("POST异步请求为String解析异常" + e.toString());
+                    } finally {
+                        myDataCallBack.onAfter();
                     }
                 }
             });
-            myDataCallBack.onAfter();
         } catch (Exception e) {
             Logger.e("POST异步请求解析为String异常" + e.toString());
             e.printStackTrace();
